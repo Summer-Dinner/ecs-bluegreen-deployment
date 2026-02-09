@@ -33,3 +33,204 @@ Traceback (most recent call last):
     raise NotFound() from None
 werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 2026-02-09 16:07:50 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:14:12 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:14:12 - ERROR - Error occurred: [Errno 2] No such file or directory: '/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/./images/philipp-a-urlich-clouds.png'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/app.py", line 89, in stars
+    return send_file(filename, mimetype='image/png')
+  File "/usr/local/lib/python3.10/dist-packages/flask/helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/./images/philipp-a-urlich-clouds.png'
+2026-02-09 17:14:12 - INFO - Response: GET /stars - Status 500
+2026-02-09 17:14:12 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:14:12 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:14:12 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:15:04 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:15:04 - INFO - Response: GET /stars - Status 200
+2026-02-09 17:15:04 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:15:04 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:15:04 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:15:39 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:15:39 - ERROR - Error occurred: [Errno 2] No such file or directory: '/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/./images/clouds.png'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/app.py", line 89, in stars
+    return send_file(filename, mimetype='image/png')
+  File "/usr/local/lib/python3.10/dist-packages/flask/helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/./images/clouds.png'
+2026-02-09 17:15:39 - INFO - Response: GET /stars - Status 500
+2026-02-09 17:15:39 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:15:39 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:15:39 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:16:19 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:16:19 - ERROR - Error occurred: [Errno 2] No such file or directory: '/images/clouds.png'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/app.py", line 89, in stars
+    return send_file(filename, mimetype='image/png')
+  File "/usr/local/lib/python3.10/dist-packages/flask/helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/images/clouds.png'
+2026-02-09 17:16:19 - INFO - Response: GET /stars - Status 500
+2026-02-09 17:16:19 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:16:19 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:16:19 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:16:20 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:16:20 - ERROR - Error occurred: [Errno 2] No such file or directory: '/images/clouds.png'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/app.py", line 89, in stars
+    return send_file(filename, mimetype='image/png')
+  File "/usr/local/lib/python3.10/dist-packages/flask/helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/images/clouds.png'
+2026-02-09 17:16:20 - INFO - Response: GET /stars - Status 500
+2026-02-09 17:16:20 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:16:20 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:16:20 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:16:30 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:16:30 - ERROR - Error occurred: [Errno 2] No such file or directory: '/images/clouds.png'
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/DevOps/February/Q1/Wk5/ecs-bluegreen-deployment/app/app.py", line 89, in stars
+    return send_file(filename, mimetype='image/png')
+  File "/usr/local/lib/python3.10/dist-packages/flask/helpers.py", line 518, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/utils.py", line 421, in send_file
+    stat = os.stat(path)
+FileNotFoundError: [Errno 2] No such file or directory: '/images/clouds.png'
+2026-02-09 17:16:30 - INFO - Response: GET /stars - Status 500
+2026-02-09 17:16:30 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:16:30 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:16:30 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:17:32 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:17:32 - INFO - Response: GET /stars - Status 200
+2026-02-09 17:17:32 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:17:32 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:17:32 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 17:17:36 - INFO - Request: GET /stars from 127.0.0.1
+2026-02-09 17:17:36 - INFO - Response: GET /stars - Status 304
+2026-02-09 17:17:36 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 17:17:36 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 17:17:36 - INFO - Response: GET /favicon.ico - Status 500
