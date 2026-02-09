@@ -1,0 +1,46 @@
+version: 0.2
+
+env:
+  variables:
+    REPO_NAME: "summer_sky/myapp-image"
+    CONTAINER_NAME: "wk4-app-container"
+
+phases:
+  pre_build:
+    commands:
+      - set -e
+      - echo "Resolving environment..."
+      - REGION=${AWS_DEFAULT_REGION:-$AWS_REGION}
+      - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+
+      # Step 1: Login to ECR
+      - echo "Logging in to Amazon ECR..."
+      - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com
+
+      # Step 2: Set Variables
+      - REPO_URI="$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$REPO_NAME"
+      - COMMIT_HASH=$(echo "${CODEBUILD_RESOLVED_SOURCE_VERSION:-manual}" | cut -c 1-7)
+      - TIMESTAMP=$(date +%Y%m%d%H%M%S)
+      - IMAGE_TAG="$COMMIT_HASH-${TIMESTAMP}"
+      - export IMAGE_URI="$REPO_URI:$IMAGE_TAG"
+      - echo "Image URI -> $IMAGE_URI"
+
+  build:
+    commands:
+      - echo "Build started on $(date)"
+      - docker build --pull --no-cache -f app/Dockerfile -t "$IMAGE_URI" app
+      - docker tag $IMAGE_URI $REPO_URI:latest
+
+  post_build:
+    commands:
+      - echo "Pushing image to ECR..."
+      # Step 4: Push both tags
+      - docker push $IMAGE_URI
+      - docker push $REPO_URI:$IMAGE_TAG
+      - echo "Writing imagedefinitions.json"
+      - printf '[{"name":"%s","imageUri":"%s"}]' "$CONTAINER_NAME" "$IMAGE_URI" > imagedefinitions.json
+
+
+artifacts:
+  files:
+    - imagedefinitions.json
