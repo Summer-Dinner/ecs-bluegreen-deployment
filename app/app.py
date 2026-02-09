@@ -84,7 +84,7 @@ def user_data():
     return users
 
 @app.route('/stars')
-def if_data():
+def stars():
     filename = './images/stars.png'
     return send_file(filename, mimetype='image/png')
 
