@@ -15,3 +15,21 @@ Traceback (most recent call last):
     raise NotFound() from None
 werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 2026-02-09 15:50:02 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-09 16:07:49 - INFO - Request: GET /health from 127.0.0.1
+2026-02-09 16:07:49 - ERROR - Health check passed!
+2026-02-09 16:07:49 - INFO - Response: GET /health - Status 200
+2026-02-09 16:07:50 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-09 16:07:50 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-09 16:07:50 - INFO - Response: GET /favicon.ico - Status 500
