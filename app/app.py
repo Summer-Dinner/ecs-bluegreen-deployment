@@ -83,9 +83,14 @@ def helloworld():
 def user_data():
     return users
 
-@app.route('/stars')
+@app.route('/clouds')
 def stars():
     filename = './images/clouds.jpg' 
+    return send_file(filename, mimetype='image/png')    
+
+@app.route('/stars')
+def stars():
+    filename = './images/stars.jpg' 
     return send_file(filename, mimetype='image/png')
 
 @app.route('/infinite-flight')
