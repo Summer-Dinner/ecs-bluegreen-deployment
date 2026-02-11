@@ -85,7 +85,7 @@ def user_data():
 
 @app.route('/clouds')
 def clouds():
-    filename = './images/clouds.jpg' 
+    filename = './images/clouds2.jpg' 
     return send_file(filename, mimetype='image/png')    
 
 @app.route('/stars')
