@@ -104,8 +104,8 @@ def health():
     # ⚠️ BROKEN HEALTH CHECK - Returns 500 error
     # Use this to test health check failures and AWS target group unhealthy alerts
     # """
-    logger.error("Health check passed!")
-    return "<h1>App is Up</h1>", 200
+    logger.error("Health check failed!")
+    return "Service Unavailable", 503
 
 @app.route('/stress-test')
 def stress_test():
