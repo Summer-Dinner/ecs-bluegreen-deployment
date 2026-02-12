@@ -21,7 +21,22 @@ To test system resilience, a **Logic Fault** was injected into the Green version
 ---
 
 ### Rollback Decision
-The rollback was triggered **automatically** by the **ECS Deployment Circuit Breaker**. Because the Green tasks never reached a "Steady State" (due to failing health checks), the deployment controller halted the traffic shift. The Production Listener (Port 80) never pointed to the Green group, ensuring 0% of users were exposed to the failure.
+The ECS deployment controller prevented the green task set from becoming steady due to failing health checks. The production listener remained on the blue target group, ensuring no production traffic reached the unhealthy green tasks.
+
+In native ECS blue/green deployments, traffic remains routed to the existing (blue) environment until the green task set passes health checks and is marked steady.
+
+If the green tasks fail to stabilize, the deployment does not shift traffic, and the service continues serving from blue. ECS itself does not automatically revert traffic; instead, it *prevents the traffic shift*, effectively isolating the failure.
+
+This behavior ensures that unhealthy green deployments do not impact live users, but the control to shift or revert remains with the operator or the deployment pipeline.
+
+---
+
+### How ECS Native Blue/Green Works Internally
+
+- Two target groups are preconfigured: one for blue (production) and one for green (validation). 
+- A single ALB listener can be reused with weighted rules if available, but most implementations use separate test listeners. 
+- ECS deployment controller handles task set creation and registration to target groups.
+- Traffic switches only after health checks pass; there is no built-in, gradual weighted shift with native ECS (unlike CodeDeploy). 
 
 ---
 
