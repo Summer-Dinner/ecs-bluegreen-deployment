@@ -90,7 +90,7 @@ def clouds():
 
 @app.route('/stars')
 def stars():
-    filename = './images/stars.jpg' 
+    filename = './images/stars.png' 
     return send_file(filename, mimetype='image/png')
 
 @app.route('/infinite-flight')
