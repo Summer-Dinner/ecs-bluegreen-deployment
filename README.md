@@ -1,1 +1,42 @@
-# ecs-bluegreen-deployment
+# ECS Observability & Resilience Framework
+## Deployment Strategy: Blue/Green
+This project utilizes Native ECS Blue/Green Deployment. Unlike standard rolling updates, this strategy provisions a complete "Green" environment alongside the existing "Blue" environment. This allows for total environment isolation and near-instant cutover or rollback without affecting the steady state of the application.
+
+---
+
+### Traffic Control Mechanism
+Traffic is managed via an Application Load Balancer (ALB) using a dual-listener configuration:
+
+- **Production Listener (Port 80)**: Routes live traffic to the "Blue" Target Group.
+
+- **Test Listener (Port 8080)**: Routes traffic to the "Green" Target Group for pre-deployment validation.
+
+- **Shift Logic**: The ECS deployment controller manipulates Target Group weights. Only after the Green tasks pass health checks is the weight shifted 100% from Blue to Green.
+
+---
+
+### Failure Introduced in Green
+To test system resilience, a **Logic Fault** was injected into the Green version of the application. I modified the ``/health`` endpoint in the Flask application code to return an ``HTTP 500 Internal Server Error`` instead of the standard ``200 OK``. This was designed to simulate a critical application-level failure that passed the container build phase but failed during the runtime "Bake Time."
+
+---
+
+### Rollback Decision
+The rollback was triggered **automatically** by the **ECS Deployment Circuit Breaker**. Because the Green tasks never reached a "Steady State" (due to failing health checks), the deployment controller halted the traffic shift. The Production Listener (Port 80) never pointed to the Green group, ensuring 0% of users were exposed to the failure.
+
+---
+
+### Blast Radius Analysis
+- **Scope**: The failure was strictly isolated to the Green Target Group.
+
+- **User Impact**: Zero. Live users hitting the ALB on Port 80 continued to be served by the stable Blue environment.
+
+- **Infrastructure Impact**: Minimal. Only the additional Fargate tasks provisioned for the Green environment consumed resources before being decommissioned.
+
+---
+
+### Lessons Learned
+1. **Test Listeners are Critical**: Relying solely on Port 80 for Blue/Green is risky. The 8080 listener allowed for verification without public exposure.
+
+2. **Health Check Sensitivity**: Setting the HealthCheckGracePeriodSeconds correctly is vital to ensure the app has enough time to start before the circuit breaker kills the task.
+
+3. **Observability beats Monitoring**: Simply knowing the task was "Down" wasn't enough; having centralized awslogs allowed me to see why the 500 error was occurring immediately.
