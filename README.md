@@ -40,6 +40,21 @@ This behavior ensures that unhealthy green deployments do not impact live users,
 
 ---
 
+### Target Group Health Transition
+The lifecycle of the Green targets during the failure followed a "Fail-Fast" pattern. Unlike the Blue targets, which remained Healthy, the Green targets moved through these states:
+
+1. **Initial** (``unused``): Task is provisioned but not yet registered.
+
+2. **Validation** (``initial``): Task is registered to the Green Target Group; health checks begin.
+
+3. **Failure** (``unhealthy``): The application returns a 500 response. The ALB marks the target as unhealthy after 3 consecutive failures.
+
+4. **Deregistration** (``draining``): The ECS Deployment Circuit Breaker identifies the failure and begins task termination.
+
+**Analyst Insight**: Because I set the ``HealthCheckGracePeriodSeconds`` to 60s, the system allowed the application enough time to boot, ensuring that the Unhealthy signal was a genuine application error and not a premature network timeout.
+
+---
+
 ### Blast Radius Analysis
 - **Scope**: The failure was strictly isolated to the Green Target Group.
 
