@@ -88,3 +88,10 @@ The lifecycle of the Green targets during the failure followed a "Fail-Fast" pat
 2. **Health Check Sensitivity**: Setting the HealthCheckGracePeriodSeconds correctly is vital to ensure the app has enough time to start before the circuit breaker kills the task.
 
 3. **Observability beats Monitoring**: Simply knowing the task was "Down" wasn't enough; having centralized awslogs allowed me to see why the 500 error was occurring immediately.
+
+4. **Deployment validation**: Observability signals (metrics + alarms) confirm safe deployment behavior.
+
+---
+
+## Outcome 
+Safe Blue/Green deployment validated; controlled failure in Green prevented traffic exposure to production users. This demonstrates production-grade deployment and observability practices.
