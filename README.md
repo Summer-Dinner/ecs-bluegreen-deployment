@@ -55,6 +55,24 @@ The lifecycle of the Green targets during the failure followed a "Fail-Fast" pat
 
 ---
 
+### Cloudwatch Alarms
+
+![UnhealtyHostCount](/app/images/Green-Target-UnhealthyHostCount.jpeg)
+**Description**: Monitors the target that is failing health checks in the Green Target Group.
+**Threshold**: If UnhealthyHostCount >= 1 for 1 minute during the deployment phase, an automatic rollback is triggered. This prevents traffic from shifting to a failing container.
+
+![Alarm state change](/app/images/Alarm-state-change.png)
+**Description**: This metric captures the moment a CloudWatch Alarm transitions from ``OK`` to ``ALARM`` state during a deployment
+**Automated Rollback**: This alarm is configured as a "trigger" within the ECS Deployment Group. If this state change occurs during the traffic-shifting phase, ECS immediately halts the deployment and redirects 100% of traffic back to the "Blue" (original) environment.
+
+**Visibility**: Ensures that the engineering team has real-time visibility into deployment health without needing to manually refresh the AWS Console.
+
+![Production Stable](/app/images/Production-RequestCount.jpeg)
+**Description**: Monitors the RequestCount on the Production Listener (Port 80) of the Application Load Balancer.
+**Analysis**: We look for significant drops or spikes in traffic immediately following a shift. A steady request count indicates that the Blue/Green swap was transparent to the end-users and the new version is handling the load as expected.
+
+---
+
 ### Blast Radius Analysis
 - **Scope**: The failure was strictly isolated to the Green Target Group.
 
