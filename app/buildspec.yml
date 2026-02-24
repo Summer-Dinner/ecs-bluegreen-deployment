@@ -12,6 +12,7 @@ phases:
       - echo "Resolving environment..."
       - REGION=${AWS_DEFAULT_REGION:-$AWS_REGION}
       - ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
+      - echo "Region is $REGION and Account is $ACCOUNT_ID"
 
       # Step 1: Login to ECR
       - echo "Logging in to Amazon ECR..."
