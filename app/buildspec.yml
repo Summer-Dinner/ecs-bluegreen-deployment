@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    REPO_NAME: "dev-terraform"
+    REPO_NAME: "dev/terraform"
     CONTAINER_NAME: "wk6-app-container"
 
 phases:
