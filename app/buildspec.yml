@@ -2,8 +2,8 @@ version: 0.2
 
 env:
   variables:
-    REPO_NAME: "summer_sky/myapp-image"
-    CONTAINER_NAME: "wk4-app-container"
+    REPO_NAME: "dev-terraform"
+    CONTAINER_NAME: "wk6-app-container"
 
 phases:
   pre_build:
