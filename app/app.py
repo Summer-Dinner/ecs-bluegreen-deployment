@@ -7,6 +7,7 @@ import sys
 import time
 import hashlib
 import math
+import threading
 
 # Configure logging BEFORE creating the Flask app
 def setup_logging():
