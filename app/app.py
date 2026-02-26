@@ -6,6 +6,7 @@ from logging.handlers import RotatingFileHandler
 import sys
 import time
 import hashlib
+import math
 
 # Configure logging BEFORE creating the Flask app
 def setup_logging():
@@ -98,10 +99,12 @@ def if_data():
     filename = './images/InfiniteFlightDebrief.png'
     return send_file(filename, mimetype='image/png')
 
-@app.route("/burn")
-def burn():
+@app.route("/cpu-burn")
+def cpu_burn():
+    
+    x = 0.0001
     while True:
-        pass
+        x = math.sqrt(x) * math.sqrt(x + 1.000001)
 
 @app.route('/health')
 def health():
