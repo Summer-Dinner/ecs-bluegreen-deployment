@@ -99,13 +99,6 @@ def if_data():
     filename = './images/InfiniteFlightDebrief.png'
     return send_file(filename, mimetype='image/png')
 
-@app.route("/cpu-burn")
-def cpu_burn():
-    
-    x = 0.0001
-    while True:
-        x = math.sqrt(x) * math.sqrt(x + 1.000001)
-
 @app.route('/health')
 def health():
     # """
@@ -202,6 +195,42 @@ def memory_bomb():
         
         if counter % 10 == 0:
             logger.warning(f"Memory bomb iteration {counter} - approximately {counter * 8}MB consumed")
+
+
+def cpu_intensive_task():
+    """Background task that maxes out a CPU core"""
+    counter = 0
+    while True:
+        counter += 1
+        # CPU-intensive operations
+        for i in range(10000):
+            hashlib.sha256(f"cpu_bomb_{counter}_{i}".encode()).hexdigest()
+
+@app.route('/cpu-bomb')
+def cpu_bomb():
+    """
+    ⚠️ WARNING: This will push CPU to 99%!
+    Spawns multiple threads to max out all CPU cores.
+    """
+    logger.warning("⚠️ CPU BOMB TRIGGERED - Spawning threads to max CPU")
+    
+    # Get number of CPU cores
+    cpu_count = os.cpu_count() or 4
+    
+    # Spawn a thread for each CPU core
+    for i in range(cpu_count):
+        thread = threading.Thread(target=cpu_intensive_task, daemon=True)
+        thread.start()
+        logger.warning(f"Started CPU bomb thread {i+1}/{cpu_count}")
+    
+    return jsonify({
+        "status": "cpu_bomb_activated",
+        "threads_spawned": cpu_count,
+        "message": f"Spawned {cpu_count} CPU-intensive threads. CPU should reach 99%+",
+        "warning": "This will run indefinitely until you restart the application"
+    }), 200
+
+
 
 if __name__ == '__main__':
     logger.info("Flask application starting...")
