@@ -98,6 +98,11 @@ def if_data():
     filename = './images/InfiniteFlightDebrief.png'
     return send_file(filename, mimetype='image/png')
 
+@app.route("/burn")
+def burn():
+    while True:
+        pass
+
 @app.route('/health')
 def health():
     # """
