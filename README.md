@@ -8,6 +8,30 @@ This project utilizes Native ECS Blue/Green Deployment. Unlike standard rolling 
 
 ---
 
+## 🛠️ Tech Stack & Infrastructure Components
+
+### Deployment Orchestration & Compute
+| Component | Service / Tool | Logo / Badge | Function in Framework |
+| :--- | :--- | :--- | :--- |
+| **Deployment Controller** | AWS CodeDeploy | ![AWS CodeDeploy](https://img.shields.io/badge/AWS_CodeDeploy-7AA116?style=flat-square&logo=amazon-aws&logoColor=white) | Automates native Blue/Green lifecycle hooks, manages dual-target groups, and intercepts failures. |
+| **Orchestration Platform** | Amazon ECS | ![Amazon ECS](https://img.shields.io/badge/Amazon_ECS-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | Coordinates isolated Task Sets for simultaneous Blue (Prod) and Green (Stage) environment runtimes. |
+| **Serverless Compute** | AWS Fargate | ![AWS Fargate](https://img.shields.io/badge/AWS_Fargate-232F3E?style=flat-square&logo=amazon-aws&logoColor=white) | Provides isolated on-demand compute resources for both target sets without server management. |
+
+### Traffic & Ingress Engineering
+| Component | Service / Tool | Logo / Badge | Function in Framework |
+| :--- | :--- | :--- | :--- |
+| **Dual-Listener ALB** | Application Load Balancer | ![AWS ALB](https://img.shields.io/badge/AWS_ALB-FF9900?style=flat-square&logo=amazon-aws&logoColor=white) | Manages Port 80 (Live Production) and Port 8080 (Pre-flight Validation/Testing) traffic separation. |
+| **Isolating Network** | Amazon VPC | ![Amazon VPC](https://img.shields.io/badge/Amazon_VPC-232F3E?style=flat-square&logo=amazon-aws&logoColor=white) | Segregates traffic routing paths within secure, highly available private subnets. |
+
+### Observability & Guardrails
+| Component | Service / Tool | Logo / Badge | Function in Framework |
+| :--- | :--- | :--- | :--- |
+| **Deployment Guardrails** | CloudWatch Alarms | ![Metric Alarms](https://img.shields.io/badge/CloudWatch_Alarms-4D27AA?style=flat-square&logo=amazon-aws&logoColor=white) | Monitors target group health state changes to halt shifting and trigger automatic rollbacks. |
+| **Traffic Analytics** | CloudWatch Metrics | ![CloudWatch Metrics](https://img.shields.io/badge/CloudWatch_Metrics-4D27AA?style=flat-square&logo=amazon-aws&logoColor=white) | Tracks live metrics (`UnhealthyHostCount`, `RequestCount`) to map out failure blast radiuses. |
+| **Log Management** | Amazon CloudWatch Logs | ![CloudWatch Logs](https://img.shields.io/badge/CloudWatch_Logs-4D27AA?style=flat-square&logo=amazon-aws&logoColor=white) | Streams real-time `awslogs` container logs to diagnose runtime application logic faults. |
+
+---
+
 ### Traffic Control Mechanism
 Traffic is managed via an Application Load Balancer (ALB) using a dual-listener configuration:
 
