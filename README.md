@@ -3,6 +3,10 @@
 This project utilizes Native ECS Blue/Green Deployment. Unlike standard rolling updates, this strategy provisions a complete "Green" environment alongside the existing "Blue" environment. This allows for total environment isolation and near-instant cutover or rollback without affecting the steady state of the application.
 
 ---
+## Architecture Diagram
+![Architectural Diagram](/app/images/BG_Architectural_diagram.png)
+
+---
 
 ### Traffic Control Mechanism
 Traffic is managed via an Application Load Balancer (ALB) using a dual-listener configuration:

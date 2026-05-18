@@ -424,3 +424,209 @@ Traceback (most recent call last):
     raise NotFound() from None
 werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
 2026-02-26 12:09:12 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:17:51 - INFO - Request: GET /cpu-bomb from 127.0.0.1
+2026-02-26 12:17:51 - WARNING - ⚠️ CPU BOMB TRIGGERED - Spawning threads to max CPU
+2026-02-26 12:17:51 - WARNING - Started CPU bomb thread 1/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 2/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 3/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 4/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 5/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 6/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 7/8
+2026-02-26 12:17:52 - WARNING - Started CPU bomb thread 8/8
+2026-02-26 12:17:52 - INFO - Response: GET /cpu-bomb - Status 200
+2026-02-26 12:17:53 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:17:53 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:17:53 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:17:57 - INFO - Request: GET / from 127.0.0.1
+2026-02-26 12:17:57 - INFO - Response: GET / - Status 200
+2026-02-26 12:17:58 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:17:58 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:17:58 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:24 - INFO - Request: GET /cpu-bomb from 127.0.0.1
+2026-02-26 12:19:24 - WARNING - ⚠️ CPU BOMB TRIGGERED - Spawning threads to max CPU
+2026-02-26 12:19:24 - WARNING - Started CPU bomb thread 1/8
+2026-02-26 12:19:25 - WARNING - Started CPU bomb thread 2/8
+2026-02-26 12:19:25 - WARNING - Started CPU bomb thread 3/8
+2026-02-26 12:19:26 - WARNING - Started CPU bomb thread 4/8
+2026-02-26 12:19:26 - WARNING - Started CPU bomb thread 5/8
+2026-02-26 12:19:27 - WARNING - Started CPU bomb thread 6/8
+2026-02-26 12:19:27 - WARNING - Started CPU bomb thread 7/8
+2026-02-26 12:19:27 - WARNING - Started CPU bomb thread 8/8
+2026-02-26 12:19:27 - INFO - Response: GET /cpu-bomb - Status 200
+2026-02-26 12:19:27 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:19:28 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:19:28 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:33 - INFO - Request: GET /infinite-flight from 127.0.0.1
+2026-02-26 12:19:34 - INFO - Response: GET /infinite-flight - Status 304
+2026-02-26 12:19:34 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:19:34 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:19:35 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:36 - INFO - Request: GET /cpu-bomb from 127.0.0.1
+2026-02-26 12:19:36 - WARNING - ⚠️ CPU BOMB TRIGGERED - Spawning threads to max CPU
+2026-02-26 12:19:36 - WARNING - Started CPU bomb thread 1/8
+2026-02-26 12:19:37 - WARNING - Started CPU bomb thread 2/8
+2026-02-26 12:19:37 - WARNING - Started CPU bomb thread 3/8
+2026-02-26 12:19:38 - WARNING - Started CPU bomb thread 4/8
+2026-02-26 12:19:39 - WARNING - Started CPU bomb thread 5/8
+2026-02-26 12:19:39 - WARNING - Started CPU bomb thread 6/8
+2026-02-26 12:19:40 - WARNING - Started CPU bomb thread 7/8
+2026-02-26 12:19:40 - WARNING - Started CPU bomb thread 8/8
+2026-02-26 12:19:40 - INFO - Response: GET /cpu-bomb - Status 200
+2026-02-26 12:19:41 - INFO - Request: GET /infinite-flight from 127.0.0.1
+2026-02-26 12:19:41 - INFO - Response: GET /infinite-flight - Status 304
+2026-02-26 12:19:41 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:19:41 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:19:41 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:42 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:19:43 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:19:43 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:46 - INFO - Request: GET /clouds from 127.0.0.1
+2026-02-26 12:19:47 - INFO - Response: GET /clouds - Status 200
+2026-02-26 12:19:48 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:19:49 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:19:49 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:19:50 - INFO - Request: GET /infinite-flight from 127.0.0.1
+2026-02-26 12:19:52 - INFO - Response: GET /infinite-flight - Status 304
+2026-02-26 12:19:52 - INFO - Request: GET /cpu-bomb from 127.0.0.1
+2026-02-26 12:19:54 - WARNING - ⚠️ CPU BOMB TRIGGERED - Spawning threads to max CPU
+2026-02-26 12:19:55 - WARNING - Started CPU bomb thread 1/8
+2026-02-26 12:19:55 - WARNING - Started CPU bomb thread 2/8
+2026-02-26 12:19:55 - WARNING - Started CPU bomb thread 3/8
+2026-02-26 12:19:55 - WARNING - Started CPU bomb thread 4/8
+2026-02-26 12:19:55 - WARNING - Started CPU bomb thread 5/8
+2026-02-26 12:19:57 - WARNING - Started CPU bomb thread 6/8
+2026-02-26 12:19:58 - WARNING - Started CPU bomb thread 7/8
+2026-02-26 12:19:59 - WARNING - Started CPU bomb thread 8/8
+2026-02-26 12:20:00 - INFO - Response: GET /cpu-bomb - Status 200
+2026-02-26 12:20:01 - INFO - Request: GET /clouds from 127.0.0.1
+2026-02-26 12:20:02 - INFO - Response: GET /clouds - Status 200
+2026-02-26 12:20:05 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:20:05 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:20:05 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:20:07 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:20:07 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:20:07 - INFO - Response: GET /favicon.ico - Status 500
+2026-02-26 12:20:09 - INFO - Request: GET /favicon.ico from 127.0.0.1
+2026-02-26 12:20:09 - ERROR - Error occurred: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 891, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 500, in raise_routing_exception
+    raise request.routing_exception  # type: ignore[misc]
+  File "/usr/local/lib/python3.10/dist-packages/flask/ctx.py", line 362, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+  File "/usr/local/lib/python3.10/dist-packages/werkzeug/routing/map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2026-02-26 12:20:09 - INFO - Response: GET /favicon.ico - Status 500
